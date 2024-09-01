@@ -6,17 +6,16 @@ Berikut adalah beberapa perintah yang bisa kamu gunakan:
 
 1. *#help* - Untuk menampilkan pesan ini.
 2. *#quote* - Untuk mendapatkan kutipan inspiratif.
-3. *#info* - Untuk mendapatkan informasi tentang bot ini.
+3. *#gempa* - Untuk mendapatkan info gempa Terkini.
+4. *#info* - Untuk mendapatkan informasi tentang bot ini.
 
 Contoh penggunaan: 
-- Ketik *#Apa itu Bot ?* untuk bertanya tentang Bot.
+- Ketik *#Apa itu Ai ?* untuk bertanya tentang Ai.
 - Ketik *#quote* untuk mendapatkan kutipan inspiratif.
 
 Jika ada pertanyaan lebih lanjut, jangan ragu untuk bertanya! 😊
     `;
 }
-
-
 
 // #info
 export function getInfo(totalMemory, freeMemory) {
@@ -25,7 +24,7 @@ export function getInfo(totalMemory, freeMemory) {
 │◦➛ Author : *Cecep Sudrajat* 😎
 │◦➛ No-Hp : 0822-1345-2856
 │◦➛ Url : https://cpsudrajat-movie.vercel.app
-│◦➛ GitHub : https://github.com/CSxChanel/bot-app
+│◦➛ Script: https://github.com/CSxChanel/bot-app
 │◦➛ Build App : https://gemini.google.com/
 │◦➛ All : ${totalMemory.toFixed(2)} GB
 │◦➛ Free : ${freeMemory.toFixed(2)} GB

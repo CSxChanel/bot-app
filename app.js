@@ -10,6 +10,7 @@ import { Boom } from "@hapi/boom";
 import fs from "fs";
 import os from "os";
 import pino from "pino";
+import fetch from "node-fetch";
 import chalk from "chalk";
 import figlet from "figlet";
 
@@ -49,6 +50,32 @@ const getHexFromColorName = colorName => {
     };
     return colors[colorName.toLowerCase()] || "#ffffff";
 };
+
+// Info BMKG
+const gempaBmkgUrl = process.env.BMKG_GEMPA;
+const gempaBmkgImg = process.env.BMKG_IMG;
+
+// Ambil data gempa terbaru dari gempaterkini.json
+const responsDataGempa = await fetch(gempaBmkgUrl + "gempaterkini.json");
+const dataGempa = await responsDataGempa.json();
+const firstGempa = dataGempa.Infogempa.gempa[0];
+
+// Ambil data gambar dari autogempa.json
+const responsImgGempa = await fetch(gempaBmkgImg + "autogempa.json");
+const {
+    Infogempa: {
+        gempa: { Shakemap }
+    }
+} = await responsImgGempa.json();
+
+const imgBmkg = gempaBmkgImg + Shakemap;
+
+const dataGempaMessage = `Tanggal : *${firstGempa.Tanggal}*, *${firstGempa.Jam}*
+📈 Magnitude *${firstGempa.Magnitude}*
+⬇️ Kedalaman *${firstGempa.Kedalaman}*
+📍 Lokasi *${firstGempa.Lintang}*, *${firstGempa.Bujur}*
+🌐 Wilayah : *${firstGempa.Wilayah}*
+Potensi : *${firstGempa.Potensi}*`;
 
 async function connectToWhatsApp() {
     const { state, saveCreds } =
@@ -187,6 +214,7 @@ async function connectToWhatsApp() {
             sock.sendMessage(m.key.remoteJid, { text: msg }, { quoted: m });
         // Menangani pesan gambar
         if (
+            !isFromMe &&
             m.message.imageMessage &&
             (isDirectMessage || isFromGroup) &&
             !isFromStatus
@@ -334,6 +362,35 @@ async function connectToWhatsApp() {
             const infoMessage = getInfo(totalMemory, freeMemory);
             await new Promise(resolve => setTimeout(resolve, 5000));
             await reply(infoMessage);
+        } else if (messageContent.toLowerCase() === "#gempa") {
+            try {
+                const reactionMessage = {
+                    react: {
+                        text: "⏳",
+                        key: m.key
+                    }
+                };
+                await sock.sendMessage(m.key.remoteJid, reactionMessage);
+
+                await new Promise(resolve => setTimeout(resolve, 2000));
+
+                const removeReaction = {
+                    react: {
+                        text: "",
+                        key: m.key
+                    }
+                };
+
+                await sock.sendMessage(m.key.remoteJid, {
+                    image: { url: imgBmkg },
+                    caption: dataGempaMessage
+                });
+                await sock.sendMessage(m.key.remoteJid, removeReaction);
+            } catch (error) {
+                console.error("Error saat mengirim gambar gempa:", error);
+                const errorMessage = `Maaf, sepertinya ada yang error saat mengirim data gempa.\nError: ${error.message}`;
+                await reply(errorMessage);
+            }
         }
     });
 }

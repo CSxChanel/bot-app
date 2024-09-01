@@ -1,0 +1,5 @@
+{
+    "watch": ["app.js", "setting.js"],
+    "ignore": ["*.json", "*.lock", "temp/*"],
+    "delay": 1000
+}
