@@ -21,8 +21,8 @@ Jika ada pertanyaan lebih lanjut, jangan ragu untuk bertanya! 😊
 export function getInfo(totalMemory, freeMemory) {
     return `
 ╭━━━〔 Info Bot 〕━━━┈
-│◦➛ Author : *Cecep Sudrajat* 😎
-│◦➛ No-Hp : 0822-1345-2856
+│◦➛ Author : 
+│◦➛ No-Hp : 
 │◦➛ Url : https://cpsudrajat-movie.vercel.app
 │◦➛ Script: https://github.com/CSxChanel/bot-app
 │◦➛ Build App : https://gemini.google.com/
