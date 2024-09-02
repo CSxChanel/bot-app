@@ -1,0 +1,62 @@
+using WA v2.3000.1015901307, isLatest: true
+ __        __          ____        _          _    ___ 
+ \ \      / /_ _      | __ )  ___ | |_       / \  |_ _|
+  \ \ /\ / / _` |_____|  _ \ / _ \| __|____ / _ \  | | 
+   \ V  V / (_| |_____| |_) | (_) | ||_____/ ___ \ | | 
+    \_/\_/ \__,_|     |____/ \___/ \__|   /_/   \_\___|
+                                                       
+{
+  Tanggal: '02 Sep 2024',
+  Jam: '07:39:09 WIB',
+  DateTime: '2024-09-02T00:39:09+00:00',
+  Coordinates: '4.53,96.43',
+  Lintang: '4.53 LU',
+  Bujur: '96.43 BT',
+  Magnitude: '4.9',
+  Kedalaman: '10 km',
+  Wilayah: 'Pusat gempa berada di darat 35 Km TimurLaut Nagan Raya Aceh',
+  Potensi: 'Gempa ini dirasakan untuk diteruskan pada masyarakat',
+  Dirasakan: 'II Aceh Besar, II - III Banda Aceh, II - III Pidie Jaya, III-IV Bener Meriah, III - IV Takengon',
+  Shakemap: '20240902073909.mmi.jpg'
+}
+Connetion Open
+[ Pesan Keluar ] 
+ Name   :  [ 6282213452856 ] 
+ Nomer  :  [ 6282213452856 ] 
+ Pesan  :  [  ] 
+
+[ Pesan Keluar ] 
+ Name   :  [ 6282213452856 ] 
+ Nomer  :  [ 6282213452856 ] 
+ Pesan  :  [ [Gambar] 🕐 *02 Sep 2024*, *07:39:09 WIB*
+📈 *Magnitude 4.9*
+⬇️ *Kedalaman 10 km*
+📍 *Lokasi* : *4.53 LU*, *96.43 BT*
+*Pusat gempa berada di darat 35 Km TimurLaut Nagan Raya Aceh*
+⁉️ II Aceh Besar, II - III Banda Aceh, II - III Pidie Jaya, III-IV Bener Meriah, III - IV Takengon
+Potensi : Gempa ini dirasakan untuk diteruskan pada masyarakat
+
+Sumber-Data
+https://data.bmkg.go.id/#data
+┈━━━〔 BMKG〕━━━┈ ] 
+
+[ Pesan Keluar ] 
+ Name   :  [ CpSudrajat ] 
+ Nomer  :  [ 6282213452856 ] 
+ Pesan  :  [ #gempa ] 
+
+[ Pesan Keluar ] 
+ Name   :  [ 6282213452856 ] 
+ Nomer  :  [ 6282213452856 ] 
+ Pesan  :  [  ] 
+
+[ Pesan Masuk ] 
+ Name  :  [ mulyadi353879 ] 
+ From  :  [ status ] 
+ Texs  :  [  ] 
+
+[ Pesan Masuk ] 
+ Name  :  [ Aji ] 
+ From  :  [ status ] 
+ Texs  :  [ [Gambar] Cuaca tidak kooperatif ] 
+

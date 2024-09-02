@@ -1,5 +1,5 @@
 {
-    "watch": ["app.js", "setting.js"],
+    "watch": ["app.js", "setting.js", "gempa.js"],
     "ignore": ["*.json", "*.lock", "temp/*"],
     "delay": 1000
 }
